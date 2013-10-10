@@ -8,15 +8,15 @@
     <script>
 	
 	$(function() {
-		// Setter en "observatør" for keydown hendelse på noden document.body
+		<!-- Setter en "observatør" for keydown hendelse på noden document.body -->
 	    $(document.body).on('keydown', function(e) {
 		
 		
-		// Her brukes det en struktur switch som finnes i de fleste programmeringsspråk
+		<!-- Her brukes det en struktur switch som finnes i de fleste programmeringsspråk -->
 		switch (e.which) {
-			// tastekode for venstre pil; responsen er en utskrift til konsollen (innebygd i nettlesere)
+			<!-- tastekode for venstre pil; responsen er en utskrift til konsollen (innebygd i nettlesere) -->
 			
-				// Her og i andre case skal koden for å skrive til innerHTML skrives (deloppgave 0)
+				<!-- Her og i andre case skal koden for å skrive til innerHTML skrives (deloppgave 0) -->
 			
 			case 37:
 			    $case="venstre piltast er trykket!";
@@ -25,7 +25,7 @@
 				console.log('venstre piltast er trykket!');
 				break;
         
-			// tastekode for høyre pil
+			<!-- tastekode for høyre pil -->
 			case 39:
 			    $case="høyre piltast er trykket!";
 				$("#keypressed").html("høyre piltast er trykket");
@@ -34,9 +34,9 @@
 				break;
 				
 
-			// Her skal koden for å behandle andre tastetrykk skrives (deloppgave 0)
+			<!-- Her skal koden for å behandle andre tastetrykk skrives (deloppgave 0) -->
 		
-				// Her og i andre case skal koden for å skrive til innerHTML skrives (deloppgave 0)
+				<!-- Her og i andre case skal koden for å skrive til innerHTML skrives (deloppgave 0) -->
 			case 38:	
 		        $case="opp piltast er trykket!";
 				$("#keypressed").html("opp piltast er trykket");
@@ -46,7 +46,7 @@
 				
 				
         
-			// tastekode for ned pil
+			<!-- tastekode for ned pil -->
 		   case 40:	
 		        $case="ned piltast er trykket!";
 				$("#keypressed").html("ned piltast er trykket");
