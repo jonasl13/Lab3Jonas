@@ -3,3 +3,18 @@
     width: 200px;
     height: 200px;
 }
+
+#x{						/* Farge og fet skrift på x og y. */
+	color:blue;
+	font-weight:bold;
+	}
+#y{
+	color:purple;
+	font-weight:bold;
+	}
+	
+
+
+.blue-null{
+	color:blue;
+}

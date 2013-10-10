@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hendelser med jQuery</title>
+	<link rel="stylesheet"href="css/Lab3.css" type="text/css" />
+	<script src="js/jquery-1.8.1.js"></script>
+    <script>
+	
+	$(function() {
+		// Definerer variablen canvas med referanse til objekt (i DOM) med id my_canvas
+		var canvas = $('#my_canvas');
+
+		// Beregner (x,y) posisjon til canvas DOM-element på siden
+		var canvasPosition = {
+			x: canvas.offset().left,
+			y: canvas.offset().top
+		};
+		
+		// Her "fanges" click hendelse opp med jQuery metoden
+		// e refererer til hendelse (event) som da gir mulighet til å kalle tilgjengelige metoder
+		canvas.on('click', function(e) {
+		
+		// Bruker pageX og pageY for å få posisjonen til mus i forhold til hele siden (ikke my_canvas)
+			var mouse = {
+				x: e.pageX - canvasPosition.x,
+				y: e.pageY - canvasPosition.y
+			}
+		
+		/*
+		   Nå har du lokale koordinater i mouse.x og mouse.y som er beregnet i forhold til det lokale 
+		   koordinatsystemet i my_canvas med (0,0) i det øverste venstre hjørne
+		*/
+			// Skriv koordinatene ut til console basert på lab3_v1
+			// oppgave 2 a) besvares her
+		   console.log(mouse.x + "," + mouse.y);
+			$("#x").html(mouse.x);
+            $("#y").html(mouse.y);
+			// Her skrives koordinatene ut til en <span> node
+			// Man skriver til innerHTML og også legger på stil (farge osv.)
+			// oppgave 2 b) besvares her
+			
+			return false;
+		});
+	}); 
+	</script>
+</head>
+<body>
+	<p>Testside for å "fange" hendelser fra mus.</p>
+	<p>
+		<ul>
+			<li>[1]Beregne (x,y) posisjon til Canvas DOM element på siden</li> 
+			<li>[2]Finne den globale posisjonen til mus-kursøren i forhold til hele dokumentet</li> 
+			<li>[3]For å lokalisere koordinatsenteret (0,0) til Canvas elementet i det øverste venstre hjørnet, og transformere globale koordinater til lokale koordinater, ta differansen mellom den globale museposisjonen beregnet i [2] og Canvas posisjonen fra [1] </li>
+		</ul>
+	</p>
+	<canvas id="my_canvas"></canvas>
+<!-- Oppgaveløsning skal implementeres her -->
+	<br>
+Avstanden til ventstre er <span id="x"></span><br>
+Avstanden til toppen er <span id="y"></span>
+</body>
+</html>
